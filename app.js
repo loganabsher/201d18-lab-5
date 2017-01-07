@@ -85,12 +85,17 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-
+  var addOne = parseInt(sum(testArray[0], testArray[1]).splice(0,1));
+  console.log(addOne);
+  var addTwo = sum(addOne, testArray[2]).splice(0,1);
+  console.log(addTwo);
+  var message = testArray + ' was passed in as an array of numbers, and ' + addTwo + ' is their sum.';
+  return [addTwo, message];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
