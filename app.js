@@ -53,16 +53,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c){ //eslint-disable-line
-  var addOne = parseInt(sum(a, b).splice(0, 1));
-  var addTwo = parseInt(sum(addOne, c).splice(0, 1));
+  var addOne = sum(a, b).splice(0, 1);
+  console.log(addOne);
+  var addTwo = sum(addOne[0], c).splice(0, 1);
+  console.log(addTwo);
   var productOne = multiply(a, b).splice(0, 1);
+  console.log(productOne);
   var productTwo = multiply(productOne, c).splice(0, 1);
+  console.log(productTwo);
   var messageOne = a + ' and ' + b + ' and ' + c + ' sum to ' + addTwo + '.';
   var messageTwo = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productTwo + '.';
-  console.log(addTwo);
-  console.log(addOne);
-  console.log(productTwo);
-  console.log(productOne);
   return [addTwo, productTwo, messageOne, messageTwo];
 }
 
@@ -85,9 +85,9 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-  var addOne = parseInt(sum(testArray[0], testArray[1]).splice(0,1));
+  var addOne = sum(testArray[0], testArray[1]).splice(0,1);
   console.log(addOne);
-  var addTwo = sum(addOne, testArray[2]).splice(0,1);
+  var addTwo = sum(addOne[0], testArray[2]).splice(0,1);
   console.log(addTwo);
   var message = testArray + ' was passed in as an array of numbers, and ' + addTwo + ' is their sum.';
   return [addTwo, message];
@@ -111,9 +111,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-  var productOne = parseInt(multiply(testArray[0], testArray[1]).splice(0,1));
+  var productOne = multiply(testArray[0], testArray[1]).splice(0,1);
   console.log(productOne);
-  var productTwo = parseInt(multiply(productOne, testArray[2]).splice(0,1));
+  var productTwo = multiply(productOne[0], testArray[2]).splice(0,1);
   console.log(productTwo);
   var message = 'The numbers ' + testArray + ' have a product of ' + productTwo + '.';
   return [productTwo, message];
